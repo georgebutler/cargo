@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://y3l1h8i7o5m3"]
+
+[ext_resource type="Texture2D" uid="uid://u4d4pblagsm4" path="res://ship/ship_d19e01c6bcbd3bf4c4c8e99d9d2a5f5f.jpg" id="1_6ceod"]
+
+[resource]
+shading_mode = 2
+diffuse_mode = 1
+specular_mode = 2
+albedo_texture = ExtResource("1_6ceod")
+texture_filter = 0

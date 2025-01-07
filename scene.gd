@@ -8,7 +8,6 @@ func main_menu() -> void:
 		
 	var scene = preload("res://environments/main_menu.tscn").instantiate()
 	$Environment.add_child(scene)
-	
 	scene_changed.emit("main_menu")
 	
 func new_game() -> void:
@@ -17,7 +16,6 @@ func new_game() -> void:
 		
 	var scene = preload("res://environments/ship.tscn").instantiate()
 	$Environment.add_child(scene)
-	
 	scene_changed.emit("ship")
 
 func _ready() -> void:

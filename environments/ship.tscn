@@ -12,3 +12,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.34704, 0)
 
 [node name="ship2" parent="." instance=ExtResource("2_xknj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -0.0842161, 4.81936, -1.6205)
+light_energy = 4.07
+spot_range = 5.438

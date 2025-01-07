@@ -1,0 +1,46 @@
+{
+  "start": {
+	"text": "Welcome to the ship! Where would you like to go?",
+	"choices": [
+	  {
+		"text": "Explore the cargo hold",
+		"next": "cargo_hold"
+	  },
+	  {
+		"text": "Talk to the captain",
+		"next": "captain"
+	  }
+	]
+  },
+  "cargo_hold": {
+	"text": "The cargo hold is empty except for some old crates.",
+	"choices": [
+	  {
+		"text": "Return to the deck",
+		"next": "start"
+	  }
+	]
+  },
+  "captain": {
+	"text": "The captain greets you warmly. 'Welcome aboard!'",
+	"choices": [
+	  {
+		"text": "Ask about the ship",
+		"next": "ask_ship"
+	  },
+	  {
+		"text": "Return to the deck",
+		"next": "start"
+	  }
+	]
+  },
+  "ask_ship": {
+	"text": "'This ship is the pride of the fleet,' says the captain.",
+	"choices": [
+	  {
+		"text": "Thank the captain",
+		"next": "start"
+	  }
+	]
+  }
+}
