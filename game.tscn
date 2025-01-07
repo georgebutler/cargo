@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://cppqgb1u4n4vx"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_2l8jx"]
+[ext_resource type="Script" path="res://dialogue.gd" id="2_fbdum"]
+[ext_resource type="Script" path="res://scene.gd" id="3_civd6"]
+[ext_resource type="Script" path="res://main_menu.gd" id="4_eeq1g"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_2l8jx")
+
+[node name="Dialogue" type="Node" parent="."]
+script = ExtResource("2_fbdum")
+
+[node name="Display" type="CanvasLayer" parent="Dialogue"]
+
+[node name="Dialogue" type="Panel" parent="Dialogue/Display"]
+offset_right = 383.0
+offset_bottom = 124.0
+
+[node name="Container" type="VBoxContainer" parent="Dialogue/Display/Dialogue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/Display/Dialogue/Container"]
+layout_mode = 2
+text = "Hello this is some dialogue."
+fit_content = true
+
+[node name="Choices" type="VBoxContainer" parent="Dialogue/Display/Dialogue/Container"]
+layout_mode = 2
+
+[node name="Scene" type="Node" parent="."]
+script = ExtResource("3_civd6")
+
+[node name="Environment" type="Node" parent="Scene"]
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+script = ExtResource("4_eeq1g")
+
+[node name="NewGameButton" type="Button" parent="MainMenu"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "New Game"
+
+[connection signal="scene_changed" from="Scene" to="." method="_on_scene_scene_changed"]
+[connection signal="scene_changed" from="Scene" to="MainMenu" method="_on_scene_scene_changed"]
+[connection signal="scene_changed" from="Scene" to="Dialogue" method="_on_scene_scene_changed"]
+[connection signal="pressed" from="MainMenu/NewGameButton" to="MainMenu" method="_on_new_game_button_pressed"]

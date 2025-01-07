@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw3oo6moituj3"]
+
+[ext_resource type="PackedScene" uid="uid://bobkycuhdgv1f" path="res://player.tscn" id="1_1kc7i"]
+[ext_resource type="PackedScene" uid="uid://bmp75fkwkwyvl" path="res://ship/ship.glb" id="2_xknj6"]
+
+[node name="Ship" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_1kc7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.34704, 0)
+
+[node name="ship" parent="." instance=ExtResource("2_xknj6")]
+
+[node name="ship2" parent="." instance=ExtResource("2_xknj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
