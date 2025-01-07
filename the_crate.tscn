@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpjmkgy1xltk2"]
+
+[ext_resource type="PackedScene" uid="uid://5g2wdyp0qjy1" path="res://interaction.tscn" id="1_3l055"]
+[ext_resource type="Script" path="res://the_crate.gd" id="1_vdgwa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eyg5j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1qymi"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+script = ExtResource("1_vdgwa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_eyg5j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_1qymi")
+
+[node name="Interaction" parent="." instance=ExtResource("1_3l055")]
+
+[connection signal="on_interact" from="Interaction" to="." method="_on_interaction_on_interact"]

@@ -15,6 +15,10 @@ shape = SubResource("CylinderShape3D_ypubo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 current = true
 
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, 0, 0, 0)
+target_position = Vector3(0, -2, 0)
+
 [node name="Flashlight" type="Node3D" parent="Camera3D"]
 
 [node name="flashlight_22" parent="Camera3D/Flashlight" instance=ExtResource("1_y5mky")]

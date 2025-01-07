@@ -12,6 +12,14 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
+	if event.is_action_pressed("interact"):
+		if $Camera3D/RayCast3D.is_colliding():
+			var collider = $Camera3D/RayCast3D.get_collider()
+			var interaction = collider.get_node_or_null("Interaction")
+			
+			if interaction:
+				interaction.interact()
+		
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
